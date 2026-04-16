@@ -1732,7 +1732,7 @@ rebirth:AddButton("Gamepass AutoLift", function()
 end
 
 local infoTab = window:AddTab("Info")
-infoTab:AddLabel("hecho por karma").TextSize = 20
+infoTab:AddLabel("hecho por karm").TextSize = 20
 infoTab:AddLabel("https://discord.gg/Za52FQyqg8").TextSize = 20
 infoTab:AddButton("Copy Invite", function()
     local link = "https://discord.gg/9eFf93Kg8D"
