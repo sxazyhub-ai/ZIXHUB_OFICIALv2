@@ -150,15 +150,6 @@ pcall(function()
 end)
 
     -- 🔥 TU SCRIPT VA ACÁ 🔥
-
-local Players = game:GetService("Players")
-local HttpService = game:GetService("HttpService")
-
-local localPlayer = Players.LocalPlayer
-local username = localPlayer.Name
-local userId = localPlayer.UserId
-
-local Player = Players.LocalPlayer
 local player = game.Players.LocalPlayer
 local VirtualInputManager = game:GetService("VirtualInputManager")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -186,7 +177,7 @@ local player = game.Players.LocalPlayer
 local title = ("LMR ON TOP")
 
 
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/FZKONTOP/Sxo/refs/heads/main/K.lua", true))()
+local library = loadstring(game:HttpGet("https://pastebin.com/raw/wqJ8PvkW", true))()
 
 local window = library:AddWindow(title, {
     main_color = Color3.fromRGB(0, 0, 0),
@@ -1619,9 +1610,9 @@ FarmingTab:AddSwitch("Fast Rep", function(state)
         runFastRep = false
     end
 end)
-local rebirth = window:AddTab("rebirths sin packs")
+local rebirthtab= window:AddTab("rebirths sin packs")
 
-rebirth:AddTextBox("Rebirth Target", function(text)
+rebirthtab:AddTextBox("Rebirth Target", function(text)
     local newValue = tonumber(text)
     if newValue and newValue > 0 then
         targetRebirthValue = newValue
@@ -1643,7 +1634,7 @@ end)
 
 local infiniteSwitch
 
-local targetSwitch = rebirth:AddSwitch("Auto Rebirth Target", function(bool)
+local targetSwitch = rebirthtab:AddSwitch("Auto Rebirth Target", function(bool)
     _G.targetRebirthActive = bool
     
     if bool then
@@ -1661,7 +1652,7 @@ local targetSwitch = rebirth:AddSwitch("Auto Rebirth Target", function(bool)
                     _G.targetRebirthActive = false
                     
                     game:GetService("StarterGui"):SetCore("SendNotification", {
-                        Title = "ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡Objetivo Alcanzado!",
+                        Title = "¡Objetivo Alcanzado!",
                         Text = "Has alcanzado " .. tostring(targetRebirthValue) .. " renacimientos",
                         Duration = 5
                     })
@@ -1675,7 +1666,7 @@ local targetSwitch = rebirth:AddSwitch("Auto Rebirth Target", function(bool)
     end
 end, "automatic rebirth until reaching the goal")
 
-infiniteSwitch = rebirth:AddSwitch("Auto Rebirth (Infinitely)", function(bool)
+infiniteSwitch = rebirthtab:AddSwitch("Auto Rebirth (Infinitely)", function(bool)
     _G.infiniteRebirthActive = bool
     
     if bool then
@@ -1692,7 +1683,7 @@ infiniteSwitch = rebirth:AddSwitch("Auto Rebirth (Infinitely)", function(bool)
     end
 end, "rebirth infinitely")
 
-local sizeSwitch = rebirth:AddSwitch("Auto Size 2", function(bool)
+local sizeSwitch = rebirthtab:AddSwitch("Auto Size 2", function(bool)
     _G.autoSizeActive = bool
     
     if bool then
@@ -1704,7 +1695,7 @@ local sizeSwitch = rebirth:AddSwitch("Auto Size 2", function(bool)
     end
 end, "Size 2")
 
-local teleportSwitch = rebirth:AddSwitch("Auto Teleport to Muscle King", function(bool)
+local teleportSwitch = rebirthtab:AddSwitch("Auto Teleport to Muscle King", function(bool)
     _G.teleportActive = bool
     
     if bool then
@@ -1718,24 +1709,14 @@ local teleportSwitch = rebirth:AddSwitch("Auto Teleport to Muscle King", functio
     end
 end, "Tp to Mk")
 
-local player = game:GetService("Players").LocalPlayer
-local autoToolsFolder = AutoFarm:AddFolder("Rock + Tools")
 
-rebirth:AddButton("Gamepass AutoLift", function()
-    local gamepassFolder = game:GetService("ReplicatedStorage").gamepassIds
-    for _, gamepass in pairs(gamepassFolder:GetChildren()) do
-        local value = Instance.new("IntValue")
-        value.Name = gamepass.Name
-        value.Value = gamepass.Value
-        value.Parent = player.ownedGamepasses
-    end
-end
+
 
 local infoTab = window:AddTab("Info")
-infoTab:AddLabel("hecho por karm").TextSize = 20
-infoTab:AddLabel("https://discord.gg/Za52FQyqg8").TextSize = 20
+infoTab:AddLabel("hecho por karma").TextSize = 20
+infoTab:AddLabel("https://discord.gg/5cpvPru5Td").TextSize = 20
 infoTab:AddButton("Copy Invite", function()
-    local link = "https://discord.gg/9eFf93Kg8D"
+    local link = "https://discord.gg/5cpvPru5Td"
     if setclipboard then
         setclipboard(link)
         game.StarterGui:SetCore("SendNotification", {
@@ -1751,4 +1732,3 @@ infoTab:AddButton("Copy Invite", function()
         })
     end
 end)
-
